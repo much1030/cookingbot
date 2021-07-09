@@ -24,7 +24,7 @@ app.post('/', express.json(), (req, res)=>{
 	function recipesearch(agent){
 		const food = agent.parameters.food;
 		agent.add(`Here is a recipe with ` + food) + `:`;
-		return axios.get(`https://raw.githubusercontent.com/much1030/cookingbot/recipes/${food}.json`)
+		return axios.get(`https://raw.githubusercontent.com/much1030/cookingbot/main/recipes/${food}.json`)
 			.then((result) => {
 				result.data.map(recipeObj => {
 					agent.add(recipeObj.name);
